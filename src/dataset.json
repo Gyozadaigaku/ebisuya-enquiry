@@ -1,0 +1,86 @@
+{
+  "init": {
+    "answers": [{
+        "content": "予約をしたい",
+        "nextId": "makeReservation"
+      },
+      {
+        "content": "料金・コースについて知りたい",
+        "nextId": "courseDetails"
+      },
+      {
+        "content": "えびす屋について知りたい",
+        "nextId": "aboutUs"
+      },
+      {
+        "content": "えびすけについて知りたい",
+        "nextId": "dating"
+      }
+    ],
+    "question": "こんにちは！えびす屋で人力車をひいているえびすけです♪"
+  },
+  "makeReservation": {
+    "answers": [{
+        "content": "人力車の予約をしたい",
+        "nextId": "contact"
+      },
+      {
+        "content": "フォトガイドツアーの予約をしたい",
+        "nextId": "contact"
+      },
+      {
+        "content": "その他",
+        "nextId": "other_jobs"
+      }
+    ],
+    "question": "どのようなお仕事でしょうか？"
+  },
+  "aboutUs": {
+    "answers": [{
+        "content": "問い合わせる",
+        "nextId": "contact"
+      },
+      {
+        "content": "最初の質問に戻る",
+        "nextId": "init"
+      }
+    ],
+    "question": "えびす屋の始まりは〜"
+  },
+  "other_jobs": {
+    "answers": [{
+        "content": "問い合わせる",
+        "nextId": "contact"
+      },
+      {
+        "content": "最初の質問に戻る",
+        "nextId": "init"
+      }
+    ],
+    "question": "その他についてですね。コチラからお問い合わせできます。"
+  },
+  "courseDetails": {
+    "answers": [{
+        "content": "YouTubeで動画を楽しむ",
+        "nextId": "https://www.youtube.com/channel/UCFzgW_JUzQW10R95s45njzQ"
+      },
+      {
+        "content": "最初の質問に戻る",
+        "nextId": "init"
+      }
+    ],
+    "question": "ここにコースの詳細について書きたい〜。"
+  },
+  "dating": {
+    "answers": [{
+        "content": "DMする",
+        "nextId": "http://ebisuya.com/instagram"
+      },
+      {
+        "content": "最初の質問に戻る",
+        "nextId": "init"
+      }
+    ],
+    "question": "なんでも聞いてね！DM待ってるよ😘"
+  }
+}
