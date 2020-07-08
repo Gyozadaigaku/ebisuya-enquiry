@@ -1,12 +1,16 @@
 {
   "init": {
     "answers": [{
-        "content": "予約をしたい",
+        "content": "予約したい",
         "nextId": "makeReservation"
       },
       {
         "content": "料金・コースについて知りたい",
         "nextId": "courseDetails"
+      },
+      {
+        "content": "電話したい",
+        "nextId": "call"
       },
       {
         "content": "えびす屋について知りたい",
@@ -17,15 +21,15 @@
         "nextId": "dating"
       }
     ],
-    "question": "こんにちは！えびす屋で人力車をひいているえびすけです♪"
+    "question": "人力車のことならなんでも聞くっす❤️"
   },
   "makeReservation": {
     "answers": [{
-        "content": "人力車の予約をしたい",
+        "content": "人力車",
         "nextId": "contact"
       },
       {
-        "content": "フォトガイドツアーの予約をしたい",
+        "content": "フォトガイドツアー",
         "nextId": "contact"
       },
       {
@@ -33,7 +37,7 @@
         "nextId": "other_jobs"
       }
     ],
-    "question": "どのようなお仕事でしょうか？"
+    "question": "どっちを予約するっす？"
   },
   "aboutUs": {
     "answers": [{
@@ -57,7 +61,7 @@
         "nextId": "init"
       }
     ],
-    "question": "その他についてですね。コチラからお問い合わせできます。"
+    "question": "その他についてっすね。コチラからお問い合わせするっす。"
   },
   "courseDetails": {
     "answers": [{
@@ -81,6 +85,6 @@
         "nextId": "init"
       }
     ],
-    "question": "なんでも聞いてね！DM待ってるよ😘"
+    "question": "なんでも聞くっす！\\nDM待ってるっす😘"
   }
 }

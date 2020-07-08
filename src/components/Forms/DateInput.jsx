@@ -1,9 +1,19 @@
-import React from "react";
-import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import { createMuiTheme } from "@material-ui/core";
 import DateFnsUtils from "@date-io/date-fns";
 import { DatePicker } from "@material-ui/pickers";
-import jaLocale from "date-fns/locale/ja";
 import format from "date-fns/format";
+import jaLocale from "date-fns/locale/ja";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import React from "react";
+import { ThemeProvider } from "@material-ui/styles";
+
+const defaultMaterialTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#C14E49",
+    },
+  },
+});
 
 class ExtendedUtils extends DateFnsUtils {
   getCalendarHeaderText(date) {
@@ -16,18 +26,20 @@ class ExtendedUtils extends DateFnsUtils {
 
 const DateInput = (props) => {
   return (
-    <MuiPickersUtilsProvider utils={ExtendedUtils} locale={jaLocale}>
-      <DatePicker
-        animateYearScrolling
-        cancelLabel={props.cancelLabel}
-        format={props.format}
-        fullWidth
-        label={props.label}
-        okLabel={props.okLabel}
-        onChange={props.onChange}
-        value={props.value}
-      />
-    </MuiPickersUtilsProvider>
+    <ThemeProvider theme={defaultMaterialTheme}>
+      <MuiPickersUtilsProvider locale={jaLocale} utils={ExtendedUtils}>
+        <DatePicker
+          animateYearScrolling
+          cancelLabel={props.cancelLabel}
+          format={props.format}
+          fullWidth
+          label={props.label}
+          okLabel={props.okLabel}
+          onChange={props.onChange}
+          value={props.value}
+        />
+      </MuiPickersUtilsProvider>
+    </ThemeProvider>
   );
 };
 

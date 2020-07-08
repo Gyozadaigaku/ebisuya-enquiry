@@ -1,5 +1,5 @@
-import React from "react";
 import { Answer } from "./index";
+import React from "react";
 
 const AnswersList = (props) => {
   return (
@@ -8,8 +8,8 @@ const AnswersList = (props) => {
         return (
           <Answer
             content={value.content}
-            nextId={value.nextId}
             key={index.toString()}
+            nextId={value.nextId}
             select={props.select}
           />
         );

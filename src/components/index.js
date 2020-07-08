@@ -32,3 +32,13 @@ export {
   default as Loading
 }
 from './Loading'
+
+export {
+  default as LanguageList
+}
+from './LanguageList'
+
+export {
+  default as TypingBalls
+}
+from './TypingBalls'

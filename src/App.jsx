@@ -7,8 +7,14 @@ import {
   Footer,
   Header,
   Loading,
+  LanguageList,
 } from "./components/index";
-import { FormDialog } from "./components/Forms/index";
+import { ReservationForm } from "./components/Forms/index";
+
+import ListItem from "@material-ui/core/ListItem";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
+import Ebisuke from "./assets/img/ebisuke.jpg";
 
 const App = () => {
   const [answers, setAnswers] = useState([]); // 回答コンポーネントに表示するデータ
@@ -16,6 +22,7 @@ const App = () => {
   const [currentId, setCurrentId] = useState("init"); // 現在の質問ID
   const [dataset, setDataset] = useState({}); // 質問と回答のデータセット
   const [open, setOpen] = useState(false); // 問い合わせフォーム用モーダルの開閉を管理
+  const [languageSettingOpen, setLanguageSettingOpen] = useState(false); // 問い合わせフォーム用モーダルの開閉を管理
 
   // 問い合わせフォーム用モーダルを開くCallback関数
   const handleOpen = useCallback(() => {
@@ -27,9 +34,32 @@ const App = () => {
     setOpen(false);
   }, [setOpen]);
 
+  // 言語設定用モーダルを開くCallback関数
+  const languageSettingHandleOpen = useCallback(() => {
+    setLanguageSettingOpen(true);
+  }, [setLanguageSettingOpen]);
+
+  // 言語設定用モーダルを閉じるCallback関数
+  const languageSettingHandleClose = useCallback(() => {
+    setLanguageSettingOpen(false);
+  }, [setLanguageSettingOpen]);
+
   // 新しいチャットを追加するCallback関数
+  let isAfterSecondQuestion = false;
   const addChats = useCallback(
     (chat) => {
+      if (isAfterSecondQuestion === false) {
+        const firstQustion = {
+          text:
+            "こんちゃっす！<br>えびす屋で人力車をひいてる<br>えびすけっす♡えびっ♪",
+          type: "question",
+        };
+
+        setChats((prevChats) => {
+          return [...prevChats, firstQustion];
+        });
+        isAfterSecondQuestion = true;
+      }
       setChats((prevChats) => {
         return [...prevChats, chat];
       });
@@ -41,7 +71,7 @@ const App = () => {
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     // 選択された回答と次の質問をチャットに追加
     addChats({
-      text: nextDataset.question,
+      text: nextDataset.question.replace(/\\n/g, "<br>"),
       type: "question",
     });
 
@@ -67,6 +97,13 @@ const App = () => {
           a.href = nextQuestionId;
           a.target = "_blank";
           a.click();
+          break;
+
+        // 電話が選択された時
+        case nextQuestionId === "call":
+          const a2 = document.createElement("a");
+          a2.href = "tel:09012345678";
+          a2.click();
           break;
 
         // 選択された回答をchatsに追加
@@ -106,6 +143,7 @@ const App = () => {
       setDataset(initDataset);
 
       // 最初の質問を表示
+      // displayNextQuestion(currentId, initDataset[currentId]);
       displayNextQuestion(currentId, initDataset[currentId]);
     })();
   }, []);
@@ -118,23 +156,45 @@ const App = () => {
     }
   });
 
+  // addChats({
+  //   text: "hoge",
+  //   type: "question",
+  // });
+  // const chat2 = { text: "hoge", type: "question" };
+
   return (
     <>
-      <Header />
+      <Header
+        languageSettingOpen={languageSettingOpen}
+        languageSettingHandleOpen={languageSettingHandleOpen}
+        languageSettingHandleClose={languageSettingHandleClose}
+      />
       <section className="c-section">
         <div className="c-box">
           {Object.keys(dataset).length === 0 ? (
             <Loading />
           ) : (
             <>
+              {/* <ListItem className="chat__row">
+                <ListItemAvatar>
+                  <Avatar alt="icon" src={Ebisuke} />
+                </ListItemAvatar>
+                <div className="p-chat__bubble">aaaaa</div>
+              </ListItem> */}
+              {/* <Chats chats={chat2} /> */}
               <Chats chats={chats} />
               <AnswersList answers={answers} select={selectAnswer} />
             </>
           )}
-          <FormDialog
+          <ReservationForm
             open={open}
             handleOpen={handleOpen}
             handleClose={handleClose}
+          />
+          <LanguageList
+            languageSettingOpen={languageSettingOpen}
+            languageSettingHandleOpen={languageSettingHandleOpen}
+            languageSettingHandleClose={languageSettingHandleClose}
           />
         </div>
       </section>

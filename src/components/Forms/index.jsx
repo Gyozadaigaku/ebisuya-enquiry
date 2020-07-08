@@ -1,6 +1,11 @@
+export { default as CustomerForm } from "./CustomerForm";
+export { default as DateForm } from "./DateForm";
 export { default as DateInput } from "./DateInput";
-export { default as FormDialog } from "./FormDialog";
-export { default as TextInput } from "./TextInput";
-export { default as TimeInput } from "./TimeInput";
-export { default as SelectBox } from "./SelectBox";
+export { default as FormStepper } from "./FormStepper";
+export { default as PeoplePlaceForm } from "./PeoplePlaceForm";
 export { default as RadioButton } from "./RadioButton";
+export { default as ReservationForm } from "./ReservationForm";
+export { default as SelectBox } from "./SelectBox";
+export { default as TextInput } from "./TextInput";
+export { default as Thanks } from "./Thanks";
+export { default as TimeInput } from "./TimeInput";

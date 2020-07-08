@@ -1,7 +1,17 @@
-import React from "react";
+import { createMuiTheme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import { ThemeProvider } from "@material-ui/styles";
 import MenuItem from "@material-ui/core/MenuItem";
+import React from "react";
+import TextField from "@material-ui/core/TextField";
+
+const defaultMaterialTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#C14E49",
+    },
+  },
+});
 
 const currencies = [
   {
@@ -36,33 +46,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SelectBox = (props) => {
-  // const classes = useStyles();
-  // const [currency, setCurrency] = React.useState("場所A");
-
-  // const handleChange = (event) => {
-
-  //   setCurrency(event.target.value);
-  // };
-  console.log("gggggg");
   return (
-    <TextField
-      fullWidth
-      InputLabelProps={{
-        shrink: props.InputLabelProps,
-      }}
-      id="standard-select-currency"
-      select
-      label={props.label}
-      value={props.value}
-      onChange={props.onChange}
-      // helperText="Please select your currency"
-    >
-      {currencies.map((option) => (
-        <MenuItem key={option.value} value={option.value}>
-          {option.label}
-        </MenuItem>
-      ))}
-    </TextField>
+    <ThemeProvider theme={defaultMaterialTheme}>
+      <TextField
+        fullWidth
+        label={props.label}
+        id="standard-select-currency"
+        InputLabelProps={{
+          shrink: props.InputLabelProps,
+        }}
+        onChange={props.onChange}
+        select
+        value={props.value}
+      >
+        {currencies.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
+    </ThemeProvider>
   );
 };
 

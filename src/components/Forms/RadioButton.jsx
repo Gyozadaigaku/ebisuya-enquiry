@@ -1,29 +1,22 @@
-import React from "react";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
-// import { makeStyles } from "@material-ui/core/styles";
-// import TextField from "@material-ui/core/TextField";
-// import MenuItem from "@material-ui/core/MenuItem";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import React from "react";
 
 const RadioButton = (props) => {
-  // const handleChange = (event) => {
-  //   setExperience(event.target.value);
-  // };
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">ご利用は初めてですか？</FormLabel>
       <RadioGroup
         aria-label="ご利用は初めてですか？"
         name="gender1"
-        value={props.value}
         onChange={props.onChange}
-        // onChange={handleChange}
+        value={props.value}
       >
-        <FormControlLabel value="初めて" control={<Radio />} label="はい" />
-        <FormControlLabel value="2回以上" control={<Radio />} label="いいえ" />
+        <FormControlLabel control={<Radio />} label="はい" value="初めて" />
+        <FormControlLabel control={<Radio />} label="いいえ" value="2回以上" />
       </RadioGroup>
     </FormControl>
   );

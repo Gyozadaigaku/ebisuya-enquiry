@@ -1,6 +1,6 @@
-import React from "react";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import React from "react";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -22,8 +22,8 @@ const Answer = (props) => {
   return (
     <Button
       className={classes.button}
-      variant="outlined"
       onClick={() => props.select(props.content, props.nextId)}
+      variant="outlined"
     >
       {props.content}
     </Button>

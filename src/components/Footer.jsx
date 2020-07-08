@@ -1,9 +1,9 @@
-import React from "react";
-import "../assets/styles/footer.css";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import InstagramIcon from "@material-ui/icons/Instagram";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import React from "react";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import "../assets/styles/footer.css";
 
 const Footer = (props) => {
   const today = new Date();
@@ -18,7 +18,7 @@ const Footer = (props) => {
           <a target="_blank" href="https://ja-jp.facebook.com/EbisuyaAsakusa">
             <FacebookIcon />
           </a>
-          <a target="_blank" href="http://ebisuya.com/instagram">
+          <a target="_blank" href="https://www.instagram.com/ebisuya_rickshaw/">
             <InstagramIcon />
           </a>
         </div>

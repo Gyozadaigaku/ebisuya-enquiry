@@ -50,6 +50,24 @@
     width: auto;
 }
 
+.p-chat__typigng-balls-bubble {
+    background: white;
+    border-radius: 4px;
+    color: #545454;
+    font-size: 14px;
+    font-weight: 500;
+    padding: .8rem;
+    margin-right: 1rem;
+    max-width: 80%;
+    width: auto;
+
+    /* border-radius: 30px 30px 0px 30px / 30px 30px 0px 30px;
+    color: white;
+    background: #C14E49; */
+
+    /* height: 1rem; */
+}
+
 .p-chat__row {
     display: flex;
     flex-direction: row;
@@ -58,6 +76,10 @@
 }
 
 .p-chat__row .p-chat__bubble {
+    border-radius: 30px 30px 30px 0px / 30px 30px 30px 0px;
+}
+
+.p-chat__row .p-chat__typing-balls-bubble {
     border-radius: 30px 30px 30px 0px / 30px 30px 30px 0px;
 }
 
@@ -86,4 +108,45 @@
     font-size: 1rem;
     letter-spacing: .125rem;
     line-height: 1.7;
+}
+
+
+/* typing balls animation  */
+.typing-balls-box {
+    margin: 0.1rem;
+}
+
+.typing-balls-box span {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #c14e49;
+    display: inline-block;
+    margin: 0 0 0.8rem 0;
+    border-radius: 50%;
+}
+
+.typing-balls-box span:nth-child(1) {
+    animation: bounce 1.2s infinite;
+}
+
+.typing-balls-box span:nth-child(2) {
+    animation: bounce 1.2s infinite 0.2s;
+}
+
+.typing-balls-box span:nth-child(3) {
+    animation: bounce 1.2s infinite 0.4s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(1rem);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
