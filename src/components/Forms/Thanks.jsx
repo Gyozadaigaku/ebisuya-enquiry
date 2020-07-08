@@ -157,7 +157,8 @@ const Thanks = (props) => {
               <Button
                 onClick={() => {
                   props.handleClose();
-                  props.setStep(1);
+                  props.handleReset();
+                  props.resetStep();
                 }}
                 size="small"
                 color="primary"

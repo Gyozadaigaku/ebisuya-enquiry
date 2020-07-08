@@ -2,6 +2,7 @@ import { CustomerForm, DateForm, PeoplePlaceForm, Thanks } from "./index";
 import React, { useState, useCallback, useEffect } from "react";
 
 const ReservationForm = (props) => {
+  const [activeStep, setActiveStep] = useState(0);
   const [adultsNum, setAdultsNum] = useState("");
   const [childrenNum, setChildrenNum] = useState("");
   const [customerName, setCustomerName] = useState("");
@@ -93,6 +94,13 @@ const ReservationForm = (props) => {
     [step]
   );
 
+  const resetStep = useCallback(
+    (event) => {
+      setStep(1);
+    },
+    [step]
+  );
+
   const values = {
     adultsNum,
     childrenNum,
@@ -108,8 +116,6 @@ const ReservationForm = (props) => {
     return ["日付", "人数/場所", "お客様情報"];
   }, []);
 
-  const [activeStep, setActiveStep] = useState(0);
-
   const steps = getSteps();
 
   const handleBack = useCallback(() => {
@@ -123,7 +129,7 @@ const ReservationForm = (props) => {
   }, [setActiveStep]);
 
   const handleReset = useCallback(() => {
-    setActiveStep(0);
+    setActiveStep(1);
   }, [setActiveStep]);
 
   switch (step) {
@@ -135,7 +141,6 @@ const ReservationForm = (props) => {
           handleClose={props.handleClose}
           handleNext={handleNext}
           handleOpen={props.handleOpen}
-          handleReset={handleReset}
           inputDate={inputDate}
           inputTime={inputTime}
           isNextForm={isNextForm}
@@ -154,7 +159,6 @@ const ReservationForm = (props) => {
           handleClose={props.handleClose}
           handleNext={handleNext}
           handleOpen={props.handleOpen}
-          handleReset={handleReset}
           inputAdultsNum={inputAdultsNum}
           inputChildrenNum={inputChildrenNum}
           inputMeetingPlace={inputMeetingPlace}
@@ -174,7 +178,6 @@ const ReservationForm = (props) => {
           handleClose={props.handleClose}
           handleNext={handleNext}
           handleOpen={props.handleOpen}
-          handleReset={handleReset}
           inputCustomerName={inputCustomerName}
           inputNotes={inputNotes}
           inputPhoneNum={inputPhoneNum}
@@ -198,7 +201,9 @@ const ReservationForm = (props) => {
       return (
         <Thanks
           handleClose={props.handleClose}
+          handleReset={handleReset}
           open={props.open}
+          resetStep={resetStep}
           setActiveStep={setActiveStep}
           setStep={setStep}
           values={values}

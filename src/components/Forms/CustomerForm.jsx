@@ -125,7 +125,7 @@ const CustomerForm = (props) => {
           "-------------------------",
       };
       const url =
-        "https://hooks.slack.com/services/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";
+        "https://hooks.slack.com/services/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";
 
       // fetchメソッドでフォームの内容をSlackのIncoming Webhook URL に送信する
       fetch(url, {
@@ -165,7 +165,6 @@ const CustomerForm = (props) => {
             activeStep={props.activeStep}
             handleBack={props.handleBack}
             handleNext={props.handleNext}
-            handleReset={props.handleReset}
             steps={props.steps}
           ></FormStepper>
 

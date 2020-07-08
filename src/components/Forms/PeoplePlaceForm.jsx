@@ -79,7 +79,6 @@ const DateForm = (props) => {
             activeStep={props.activeStep}
             handleBack={props.handleBack}
             handleNext={props.handleNext}
-            handleReset={props.handleReset}
             steps={props.steps}
           ></FormStepper>
 
