@@ -125,7 +125,7 @@ const CustomerForm = (props) => {
           "-------------------------",
       };
       const url =
-        "https://hooks.slack.com/services/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";
+        "https://hooks.slack.com/services/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";
 
       // fetchメソッドでフォームの内容をSlackのIncoming Webhook URL に送信する
       fetch(url, {

@@ -150,3 +150,19 @@
         transform: translateY(0px);
     }
 }
+
+/* ローディングアニメーション */
+.loading {
+    top: 75%;
+    z-index: 10000;
+    background: url(../img/loading.png) no-repeat;
+    width: 200px;
+    height: 146px;
+    animation: ebisuke 2s steps(6) infinite;
+}
+
+@keyframes ebisuke {
+    to {
+        background-position: 0 -876px;
+    }
+}

@@ -129,7 +129,7 @@ const ReservationForm = (props) => {
   }, [setActiveStep]);
 
   const handleReset = useCallback(() => {
-    setActiveStep(1);
+    setActiveStep(0);
   }, [setActiveStep]);
 
   switch (step) {

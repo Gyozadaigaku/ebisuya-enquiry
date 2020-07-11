@@ -1,6 +1,7 @@
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
+import Loader from "../assets/img/loading.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +21,7 @@ const Loading = () => {
 
   return (
     <div className={classes.root}>
-      <CircularProgress color="secondary" />
+      <div className="loading" />
     </div>
   );
 };
