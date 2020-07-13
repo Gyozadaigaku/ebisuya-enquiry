@@ -124,8 +124,17 @@ const CustomerForm = (props) => {
           notes +
           "-------------------------",
       };
+
+      // const { LineClient } = require('messaging-api-line');
+
+      // // get accessToken and channelSecret from LINE developers website
+      // const client = LineClient.connect({
+      //   accessToken: ACCESS_TOKEN,
+      //   channelSecret: CHANNEL_SECRET,
+      // });
+
       const url =
-        "https://hooks.slack.com/services/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";
+        "https://hooks.slack.com/services/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";
 
       // fetchメソッドでフォームの内容をSlackのIncoming Webhook URL に送信する
       fetch(url, {
