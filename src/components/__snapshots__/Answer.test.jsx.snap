@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link changes the class when hovered 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-button-1"
+  disabled={false}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  >
+    予約したい
+  </span>
+</button>
+`;
+
+exports[`matches to the snapshot 1`] = `
+<button
+  className="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-button-1"
+  disabled={false}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="MuiButton-label"
+  >
+    予約したい
+  </span>
+</button>
+`;
